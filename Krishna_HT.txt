@@ -1,0 +1,484 @@
+Basics of Webapplication
+
+	Browsers
+	
+	
+	Major three components
+	
+		1. HTML
+		2. CSS
+		3. JS Javascript
+		
+		
+
+	HTML
+		Hyper Text Markup Language
+			1.0 -----> 5.0
+			
+		1. File creation -> .html		
+				index.html
+		2. Syntax
+			TAG or Elements
+			Tag syntax : open tag - close tag : <p>   </p>
+			
+		3. Basic structure
+		
+			<html>
+				<head>
+					<title>My Page</title>
+				</head>
+				<body>
+					<p id="p1" name="firstPTag"> </p> // id, name, class, style || type || src || attribute-name="attribute-value"
+				</body>
+			</html>
+			
+		4. Basic tag
+			Text Based : 
+				Headings : h1, h2, h3, h4, h5, h6 || <h1>
+				Paragraph : p
+			
+			Img
+				img
+				
+			Table
+				table, tr, th, td
+				
+		5. Types of elements			
+			i. Block elements - takes full width, starts with new line, size can be controlled
+			ii. Inline Elements - takes only content, parallet, size cannot be controlled
+			iii. Inline-block elements - same as inline elements but size can be controlled
+			
+			
+			Assignment
+			Name 
+			
+			desginamtion
+			
+			address
+			
+			Education
+			
+			image
+			description
+			
+			
+			My Company
+			
+			image
+			
+			company description
+			
+			my family
+			
+			Table
+			name	age 	relation
+			
+			
+			footer
+				last updated on ""
+			
+		
+	CSS	 : Cascading Style Sheet, CSS3 3rd version
+	
+		Not a programming language, same as HTML it follows some syntax
+		
+		key, value 
+		
+		key : value 
+		
+	3 ways to apply CSS
+	
+		1. Inline Style: 
+			<p style="key: value; key: value;"> Text </p>
+		
+		2. Internal Style
+		
+			<head>
+			</head>
+		
+		3. External Styles
+		
+			1. i can create a file => .css => styles.css
+			
+		
+		
+		Selecting an elements
+		
+		1. Element Selector
+			p {
+				key: value;
+				key: value;
+			}
+		
+		2. ID selector
+			#links {
+				key: value;
+				key: value;
+			}
+			
+			div#links {
+				key: value;
+			}
+			
+		3. Class selector
+		
+			.reusable { key: value; key : value }
+			
+			
+	
+	
+		CSS properties:
+		
+		
+			color : red; // named colors from browser engine // Text color
+			
+			background-color:
+			border-color:
+			
+			
+			Color theory : R G B : 
+			
+			color: #da7eb9     || 0 -> f | 0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f
+			
+			color: rgb(0,4,8)
+			
+			
+			text-align 
+				left
+				
+				center
+				
+				right
+				
+			text-decoration
+			
+				bold
+				italic
+				underline
+				
+			font
+				font-family : what style of text
+				font-size : size of text
+				font-weight
+				line-height
+				
+			
+			background-color, border-color
+			
+		Visibility 
+		
+			visibility : hidden || visible , With space
+			
+			
+		Display property
+		
+			display : block  => block elements
+			
+			display: inline => inline elements
+			
+			display: inline-block => ex: img
+			
+			display: none; || No space
+			
+			display: flex
+			
+			display: grid
+			
+			
+		Element Box Model:
+		
+			content  => blue
+			
+				padding => content < --- > end of length  => green
+				
+				Margin => one element < --- > another element => orange
+				 
+				border => white
+		
+			
+			
+		Padding:
+		
+			one side:
+			
+				padding-top : 10px; || margin-top
+			
+				padding-right : 5px; || margin-right
+				
+				padding-bottom : 10px;
+				
+				padding-left : 5px;
+				
+			All four side with differnt values
+		
+				padding : top right bottom left;
+				
+				padding : 10px 20px 5px 25px;
+			
+			Two sides having same value:
+				
+				padding: 10px 5px 10px 5px;
+				
+				padding: top-bottom right-left;
+
+				padding: 10px 5px;	
+
+
+			
+			
+			margin : 10px 20px 5px 25px;
+			
+			border
+			
+				border: 1px(thick) solid || dashed || dotted (type) #13feef(color);
+				
+				border-top: 1px(thick) solid || dashed || dotted (type) #13feef(color);
+				
+				border-bottom: 1px(thick) solid || dashed || dotted (type) #13feef(color);
+				
+				border-right: 1px(thick) solid || dashed || dotted (type) #13feef(color);
+				
+				border-left: 1px(thick) solid || dashed || dotted (type) #13feef(color);
+				
+				
+		
+		Positioning:
+		
+			float : right || left => simple way to move an element
+			
+			
+			position: static || initial || inherit || fixed || relative || absolute 
+			
+			position: fixed;
+			
+				1) comes out from normal flow, hidden from view
+				
+				2) attached to view port
+				
+				3) apply position values || top, bottom, right, left
+				
+					top : 0px;
+					
+					left: 0px;
+				4) visible 
+					
+			position: relative;
+			
+				1) comes out from normal flow
+				
+				2) but it wont be hidden
+				
+				3) postion values can be applied to change the position
+				
+				4) attached to parent
+				
+			
+			position: absolute;
+				condition : <div style="position: relative;"> 
+								<div>
+									<div>
+										<div>
+											<div>
+												<div>
+													<div>
+														<div style="position: absolute;">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								By default : <body> is relative
+				
+							
+								
+							</div>
+				1) comes out from normal flow
+				
+		
+		transform : rotate || scale | transalte
+		
+		transform : rotate(45deg)
+		
+		box-shadow: horizontal vertical blur spread color;
+		
+		box-shadow: 20px 20px 5px 10px black;
+		
+	Angular => javascript based framework
+	
+	JS inside HTML
+		1. <script> </script>
+		2. file with extension .js =>
+	
+	Global Object :
+		Window => 
+
+		document
+		
+		JSON
+		
+	Data types
+	
+		number, string, boolean, 
+		
+		Array, JSON ( JavaScript Object Notation)
+		
+		null, undefined
+		
+	variable declare
+	
+		var, let and const
+		
+		Scope :
+		
+		var a = 10;
+		let a = 10; 
+		const a = 10;
+		
+		function test() {
+			a = 15;
+			let a = 10; 
+		}
+		
+		function test1() {
+			let a = 10;
+			a = 19;
+			
+			a  = 10;
+		}
+		
+		function test2() {
+			a
+			const a = 10;
+			a = 100; // error
+			let b = '
+		}
+		
+		test2();
+		
+		var test3 = function(){
+		}
+		
+		test3();
+		
+		Dynamic typing || runtime typing
+		
+		
+		var a = 10;
+		typeof(a) => 'number'
+		
+		a = '10';
+		typeof(a) => 'string'
+		
+		Disadvantage
+			Dynamic typing
+		
+		
+		Angular 
+		
+			Javascript => JS disadve will be dis adv of angular also
+			
+			Typescript 
+			
+				created by microsoft
+				
+				Wrapper of javascript, Superset of javascript, Typed Javascript
+				
+					=> More strict and secure javascript
+					
+					=> Typescript compiler => Typescript => javascript
+				
+		
+				
+				
+		Working on Typescript
+		
+			1. create a file with extesion .ts
+			
+				syntax
+				
+					scope variable : type;
+					let a: string;
+					
+					compiling command
+					
+						tsc fileName
+						
+						tsc fileName -way
+						
+						tsc --init => will create a configuration
+						
+						tsc -w =>
+						
+			Advatages of TS
+			
+				varaibles with Typed
+				
+				OOPS concept
+				
+				JS version
+					ES2015{es5), es6
+				
+				
+			Using of typescript
+				overcomes disadv of javascript
+				
+				focus of logic
+		
+		
+		Env setup
+		
+			1. Install Node
+				=> node, npm				
+					node -v, npm -v
+					
+			2. Typescript				
+					npm install -g typescript				
+					tsc -v
+					
+			3. Angular
+			
+				npm install -g @angular/cli
+				
+			
+		VScode Extenstions:
+		
+			Angular essentials
+			Emmet
+			ESLint
+			Prettier
+			live-server
+			
+			
+			
+				
+		
+		
+		
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

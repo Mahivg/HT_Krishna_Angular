@@ -1,0 +1,53 @@
+body {
+  font-family: "Langar", cursive;
+  /* background: url("https://wallpapercave.com/wp/wp2570965.jpg"); */
+}
+
+h1#coloring {
+  color: lightblue;
+}
+h1 {
+  color: #205c20;
+}
+div#links {
+  background-color: #81c781;
+  border-color: #205c20;
+}
+
+div#headings {
+  margin: 10px 20px 5px 25px;
+}
+
+div#fixed {
+  height: 150px;
+  width: 150px;
+  background-color: green;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}
+
+div#positioning {
+  margin-left: 30px;
+}
+.box {
+  height: 150px;
+  width: 150px;
+  color: green;
+  background-color: pink;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.box1 {
+  position: relative;
+  background-color: green;
+}
+
+.box2 {
+  position: absolute;
+  background-color: blue;
+}
