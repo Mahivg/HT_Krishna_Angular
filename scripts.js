@@ -85,3 +85,14 @@ if( JSON.stringify(obj1) === JSON.stringify(obj2)) {
 }else {
     console.log("yes both are not equal");
 }
+
+// var headingElem = document.getElementById('headings');
+// console.log(headingElem);
+// headingElem.classList = ['class1' , 'class2'];
+
+// headingElem.innerHTML = `<h1> Content CHanged by JS </h1>`;
+
+function changeContent() {
+    var divElem = document.getElementById('placeholder');
+    divElem.innerHTML = `<h1> Chnaged Content </h1>`;
+}

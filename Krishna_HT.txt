@@ -378,7 +378,7 @@ Basics of Webapplication
 		
 		Angular 
 		
-			Javascript => JS disadve will be dis adv of angular also
+			Javascript => JS dis adv will be dis adv of angular also
 			
 			Typescript 
 			
@@ -406,7 +406,7 @@ Basics of Webapplication
 					
 						tsc fileName
 						
-						tsc fileName -way
+						tsc fileName -w
 						
 						tsc --init => will create a configuration
 						
@@ -452,19 +452,274 @@ Basics of Webapplication
 			live-server
 			
 			
+		
+		
+		Multi Page Application
+			Home.html
+				<html>
+					<head>
+						-> styles and Js
+					<body>
+					
+						Content 
+				</HtmL>
 			
+			About.html
+			
+			<html>
+				<head>
+					-> styles and Js
+				<body>
 				
+					Content 
+			</HtmL>
+			
+			Contact.html
+			
+			<html>
+				<head>
+						-> styles and Js
+				<body>
+				
+					Content 
+			</HtmL>
+			
+		Single Page Application
+				
+		index.html
 		
+			<html>
+				<head>
+						-> styles and Js
+				<body>				
+					<div id="placeholder">
+						
+					</div>
+			</HtmL>
+			
+			
+		javascript
 		
+			getElementByID
+			
+		jQuery - JS framework
 		
+			contact.html
+				skdskaljdkl
+				
+			read file and paste the content within the div
+			
+		AngularJS => Dynamic typing AngularJS 1.1 => 1.9
 		
+			JavaScript Framework
+			
+			MVC => Model  View Controller
+					html
+					js		
+				
+		Angular => 2.0 => 10.0 => based on typescript
+
+			Component Based architecture => widget
+			
+			navigation.component => navigation functionality
+			
+			leftside component => left side component
+			
+			rightsidecomponent
+		
+		Angular is for creating SPA Architecture
+		
+		ShoppingCart		
+		
+			Navigation Component
+			
+			Login Component
+			
+			ProductModule
+			
+				ProductListComponent =>
+				
+				ProductDetail Component
+			
+			Cart compoent
+			
+		Module => Declaration to Angular
+		
+		AppModule.ts
+		
+			declarions: [Navigation, login, productLIst, prodcutdetail],
+			
+			imports : [ FormsModule ] => components from FormsModule will be included to our application
+			
+		FormsModule.ts => Reusablity
+		
+			declarions: [Navigation, login, productList, prodcutdetail],
 	
+	
+		Angular framework
+			
+			File create and work
+			
+			Angualr will come up with setups
+			
+			Node based application
 		
+		Application setup
 			
+			npm install -g @angular/cli
 			
+			ng --version
 			
+			Angular CLI
 			
+			To create a Angular Project
 			
+				ng new ApplicaitonName [options]
+				
+				ng new MyFirstApp
+				ng new ShoppingCart --prefix=ht --skip-tests=true
+			
+			To Run a application
+			
+				ng serve // default  4200
+				ng serve --port=4300
+				
+			Angular is based on component
+			
+				Combination of 3 files				
+					app.component.html
+					app.component.ts
+						name = 'test';
+					app.component.css
+					
+					Custom HTML elememt
+					
+						app-root => app prefix
+						
+						kr-root => prefix : "kr"
+					
+					app.component.spec.ts => testing
+		
+			Every Application
+			
+				Root Module
+					AppModule
+				
+				Root component
+					AppComponent => Parent of all
+					
+						Navcomponent
+						
+			ShoppingCart
+			
+				Navigation component
+			
+				Login => Login View
+				
+					Products view => View
+						ProductList
+					
+					Product Detail
+					
+						ProductDetail
+					
+					Cart => Cart List out
+					
+					 checkout => 
+					 
+				Typescript
+				
+				 s: string ;
+				 ss: string[];
+				 
+				 s = '10';
+				 ss= ['ss', 'sss', 'ssss' ]
+				 
+				 class User {
+					
+					name: string;
+					
+					age: number;
+				 
+				 }
+				 
+				 u: User;
+				 us: User[];
+				 
+				 us = [
+				 { name : 'test', age: 10 },
+				 { name : 'test', age: 10 },
+				 { name : 'test', age: 10},
+				 ]
+				 
+				 u = { name : 'test', age: 10 }
+				 
+				 
+			Root Module
+				
+				App module
+				
+			Root Component
+				App component -> starting first
+				
+				Parent for all component
+				
+		Creating a component
+		
+			-> Create a folder with component name
+			
+				my-first
+					my-first.component.html
+					my-first.component.ts => compulsory
+					my-first.component.css
+					my-first.componet.spect.ts => testing file => optional
+					my-first.component.ts => compulsory
+					
+					
+					
+				my-first.component.ts
+					
+					create a class
+					
+					annotation @Component
+					
+					@component({
+						selector: 'my-first'
+					})
+				 
+				 
+					<my-first>  </my-first>
+					
+				App.module.ts
+					declaraions: [ Appcomponent, MyFirstComponent ]
+					
+				To create a component -> angular command
+				
+					ng generate component "component-name"
+					
+					ng generate component my-second
+					
+					ng g c my-third => shortcut			
+						
+
+
+			Data flow
+			
+				create data for ur application
+				.ts
+					data type
+					
+						string, number, boolean
+						 
+						create ur own class
+			
+		username, password
+		
+			class User { => Model classes
+				name: string,
+				password: string
+			
+			}
 			
 			
 			
