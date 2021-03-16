@@ -1,0 +1,17 @@
+<div class="m-2">
+  <h2>Product List</h2>
+  <div>
+    <div>
+      <img
+        class="img-fluid product-list-img"
+        alt="product image"
+        [src]="product.imageUrl"
+      />
+      <div>
+        <h3>{{ product.name }}</h3>
+        <h4>Rs.{{ product.price }}</h4>
+        <p>{{ product.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,511 @@
+
+
+HTML, CSS, JS => browser => browser engine
+
+
+	Framework   	and 		library
+	
+		Angular, Vue and React   => React, RX library=> Math => Math.pow, math.square
+	
+	
+	Framework
+	
+		set of rules or steps we need to follow to create a application
+		
+		Website => 
+		
+		Website or Project => Single page applicaition => SPA => Page should not load more than once			
+			
+			Mutipage Application => 
+
+		Angular => SPA 
+		
+			belongs to Google
+			
+			strong community
+			
+			Angular 1.X => Javascript
+			
+			Angular 2 => Typescript => Super set of javascript
+			
+				every 6 month
+			
+			Angular 11 => 
+			
+				small widgets => components, htmls
+				
+				communicating between components
+				
+			Vscode => Adding extenstions
+						VS code extension:	
+							Angular Essentials snippets by johnpapapa
+							ESLint
+							Emmet
+							Prettier
+							Debugger for chrome
+							Path intelisense
+							Material Icon Theme
+							Dracula theme
+			
+			Setup =>
+					Node, NPM, Typescript, Angular
+			
+			
+			 html
+			 
+				html, head, body			
+				
+				
+				<html>
+				
+					<head>
+					
+					<body>
+						<placeholder>
+							
+						</placeholder>
+					
+					</body>
+					
+				</html>								
+	
+	Library
+	
+		we can include library into any of our project and we can simply use it
+		
+		
+	Installation:
+	
+		Vscode
+		
+		Node 
+			=> central repository
+				
+			npm => node package manager
+			
+			npm install -g typescript
+			
+				/users/
+					AppData\Roaming\npm
+			
+			Folder or project level
+			
+				npm install bootstrap
+			
+				npm install 'library1'
+				...
+				npm install 'library10'
+				
+				package.json => it will maintain all the needed libraries and dependecny u need for the project
+				
+				
+			npm install -g @angular/cli
+			
+			npm uninstall -g @angular/cli
+		
+		
+			package.json => 
+			
+			{
+				'key': 'value'
+				
+			}
+			
+			{
+			
+				'dependecies' : {
+				
+					'@angular/core' : 11.0
+					
+				}
+			}
+			
+			npm install
+			
+			package.json => npm install
+			
+			node_modules => 500mb => 
+			
+				@angular
+					core
+				
+				current directory
+				
+					node_modules -> folder					
+						library1
+						library2
+						...
+						library10
+						
+			Folder2
+				package.json => npm install
+				node_modules -> folder					
+						library1
+						library2
+						...
+						library10
+		
+		Typescript
+			ts to js
+				tsc => typescript
+				
+			tsconfig.json => configurations regarding converting ts to js	
+			
+						
+		
+		Angular/CLI => command line interface
+		
+			ng --version => angular cli version			
+			
+			Creating a Project => base project
+			
+				ng new "Project-Name" 
+				
+				ng new "project-name" --skipTests=true --styles=scss --prefix='ht'
+				
+					One components =>
+							.component.html
+							.component.css | .scss | .sass | stylus
+							.component.ts
+							.component.spec.ts => 
+						
+				
+				ng new FirstProject => FirstProject => All the base project content
+				
+				github url
+					code they have uploaded
+				
+			Run ng serve
+			
+				it will run ur applicaition in localhost:4200
+				
+				ng serve --port=4300
+					it will run ur application in the given port
+					
+				it will start ur applicaition in a random port
+					
+		
+		ng new MyFirstApp --skipTests=true --style=css
+				
+		
+		
+		Angular
+
+			angular.json
+			
+				configuration file for Angular project
+				
+			Single Page Application
+			
+			.html => index.html
+				html
+				head
+				body
+			
+			.html					
+				div , section
+			
+			lots of htmls
+			
+				login.html , products.html, product-detail.html, check-out.html
+			
+			lot of javascripts
+					relative js file
+			lots of css
+			
+				relative css
+			
+			Webpack => module builder			
+					build ur js, css and html in the browser
+					
+					5 js files
+					
+			Engine
+				angular 2 => JIT => Just In Time
+				
+				Angular 4 to 8=> AOT => Ahead Of Time 
+				
+				ivy_engine => renderer engine
+			
+			
+			Why Angular is so famous?
+			
+				SPA
+				
+				Modularized Application Development
+				
+					AppModule => Rootmodule => main.ts
+					
+						AppComponent => Root COmponent => AppModule[Bootstrap]
+				
+					ProductModule
+					
+						products => components
+						
+						product-detail
+						
+					PaymentModule
+					
+						check-out
+						payment
+						
+				Testing Framework => Karma
+				
+				It support various UI framework
+				
+					AngularMaterial
+					
+					Bootstrap
+					
+					MaterialBootsrap
+					
+				
+			
+			Chrome , firefox, IE, Edge, Safari
+			
+			polyfills.ts
+			
+		
+		Why Module ?		
+		
+			Components, Directives, Services (worker class), Pipes (modify ur view output), 	
+			
+			
+			component1
+				.css, .ts, .html
+			
+			
+			Inform to modules => 
+			
+		
+		
+		Flow
+		
+		from angular.json
+		
+			index.html, main.ts
+			
+							AppModule --> Root Module -> app.module
+									AppComponent --> RootComponent
+				
+			
+				Customize it
+				
+					many components => Child for Rootcomponent
+			
+			
+			
+			
+			
+			Components
+					
+					Basic block of application
+					
+						.css, ts, html 
+						
+						<app-root> </app-root> => render the content present in app.component.html
+						
+						Creating a custom HTML tag
+						
+						<h1>, img, div, html
+						
+					product.component.
+										html
+						<app-product>
+						
+						</app-product>
+						
+						
+			Create two project
+					
+					Bootstrap as out UI Framework
+					
+					MyFirstApp
+					
+						We will use this one to learn new concepts
+					
+					ShoppingCart
+						
+						We will implement to create a application
+						
+						
+						
+			
+			Components:
+			
+				One UI template --> which can be reused with the data we are binding
+			
+			
+				How to create a component
+				
+					3 files =>
+					
+						.component
+					
+					MyFirstComponent => app => my-first => 3 files
+						
+			
+					create a class
+					
+					annotate it with @Component() from angular/core
+					
+					Pass a json object(meta-data about component)
+					
+					@Component({
+						selector: 'custom-html-tag',
+						template,
+						templateUrl,
+						styles,
+						styleUrls					
+						
+					})
+					
+					for a string "hi", '', ``
+					
+					we went to app.module.ts => and registered our component
+					
+					Various COmponent selector:
+					
+					selector: 'app-my-first', //<app-my-first> </app-my-first>,
+					
+					selector: '.app-my-first', <div class="app-my-first"> </div>
+					
+					
+				Angular/Cli
+				
+					Command to create a component
+					
+					ng generate component 'component-name'
+					
+					ng generate component my-second --skipTests=true => 'app-my-second' => 'ht-my-second'
+					
+					ng g c my-second --skipTests=true
+			
+			
+				AppComponent
+				
+						MySecondComponent
+						
+							MyThirdComponent
+			
+		Project : ShoppingCart
+		
+			Navigation Bar => navbar component
+		
+			Login Page => Login Component
+			
+				Products => 10 products				=> ProductComponent
+				
+					Product-Detail => Product-Detail compoent
+					
+						Checkout -> checkout component
+						
+			Presentation
+			
+				Page Flow
+			
+			Data Integration
+			
+				Data flows
+				
+		h2 { color: red; }, .h2 { color: red; }
+			
+			<h2> Test </h2>, <div class="h2"> Test </div>
+			
+		
+	
+	Data Binding:
+	
+	
+		Binding ur values from eithert Controller to View, View to controller or both at a time;
+		
+		
+		One-way Data binding: 
+		
+			Controller to HTML :
+		
+				String Interpolation :
+				
+					Controller : num1 = 10;
+				
+					In your HTML file : {{ num1 }} or {{ 1 + 1 }}
+					
+				Property binding:
+				
+					str1="Some text";
+					
+					<input id="txt1" name="txtName" class=""  value="" />
+					
+					<div textContent="" innerHTML="">
+					
+					In Your HTML elements we need to use : []
+					
+					Example:
+					
+						<input type="text" [value]="num1" />
+					
+			HTML to controller :
+			
+				Event Binding : 
+				
+					Data will be passed to controller based on any event:
+							
+							Interact with your input element 
+							
+							<button onclick="function()" />
+							
+							Press any button => click
+							
+							
+							
+				In your HTML you have to use : ()
+					
+						(click)="function()"
+						
+		
+		Gets value from html to controller:
+		
+			Template Reference:
+			
+				#
+			
+				<input id="txtInput" type="text" class="form-control" #myTxt />
+				
+				myTxt.id => txtInput
+				
+				<h2>Event Binding</h2>
+				
+				1. Create a template reference variable ex: #myInput
+				
+				2. Either pass the variable to controller in any function
+				
+				3. Or Bind the template reference with @ViewChild('templateRefName') 
+					ex: @ViewChild('myInput') txtInput: ElementRef;
+						
+						
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				
+					
+				
+		
+		
+		
+		
+		
+		
+		

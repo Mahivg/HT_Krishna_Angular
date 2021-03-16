@@ -1,2 +1,38 @@
-<h2>This is my first component html</h2>
-<app-my-second></app-my-second>
+<h1 class="h1">This is my First component</h1>
+<h2>This is another tag from HTML file</h2>
+
+<h1>One way data binding</h1>
+<div class="m-2">
+  <h3>String Interpolation</h3>
+  <p>My Num value is : {{ num1 }}</p>
+
+  <p>Example expression : {{ "String1 " + " sting 2" }}</p>
+</div>
+
+<div class="m-2">
+  <h3>Property Binding</h3>
+  <p [textContent]="'My Num value is :' + num1"></p>
+  <!-- <input type="text" class="form-control" value="{{ inputText }}" /> -->
+  <!-- <input type="text" class="form-control" [value]="inputText" />
+  <input type="text" class="form-control" [value]="1 + 1" /> -->
+
+  <!-- DONT DO THIS ONE -->
+  <!-- <input type="text" class="form-control" [value]="{{inputText}}" /> -->
+</div>
+
+<div class="m-2">
+  <h2>Event Binding</h2>
+  <!-- ng-mouseover => (mouseover) -->
+
+  <p>Value in textInInput variable</p>
+  <p>{{ textInInput }}</p>
+
+  <input id="txt1" type="text" class="form-control" #myInput />
+  <button
+    type="button"
+    class="m-2 btn btn-primary"
+    (click)="buttonClicked($event)"
+  >
+    Click Me !!
+  </button>
+</div>

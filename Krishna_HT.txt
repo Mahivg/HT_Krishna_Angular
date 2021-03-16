@@ -662,8 +662,8 @@ Basics of Webapplication
 			Root Component
 				App component -> starting first
 				
-				Parent for all component
 				
+				Parent for all component
 		Creating a component
 		
 			-> Create a folder with component name
