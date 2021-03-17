@@ -1,6 +1,48 @@
 <ht-nav-bar></ht-nav-bar>
 <div class="container">
-  <ht-login></ht-login> <ht-products></ht-products>
-  <ht-product-detail></ht-product-detail>
-  <ht-checkout></ht-checkout>
+  <div class="m-2">
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="changeTabName('login')"
+    >
+      Login
+    </button>
+    <button
+      type="button"
+      class="btn btn-success ml-2"
+      (click)="changeTabName('products')"
+    >
+      Products
+    </button>
+    <button
+      type="button"
+      class="btn btn-warning ml-2"
+      (click)="changeTabName('product-detail')"
+    >
+      Product Detail
+    </button>
+    <button
+      type="button"
+      class="btn btn-info ml-2"
+      (click)="changeTabName('checkout')"
+    >
+      Checkout
+    </button>
+  </div>
+
+  <div class="m-2">
+    <div id="login" *ngIf="tabName == 'login'">
+      <ht-login></ht-login>
+    </div>
+    <div id="products" *ngIf="tabName == 'products'">
+      <ht-products></ht-products>
+    </div>
+    <div id="product-detail" *ngIf="tabName == 'product-detail'">
+      <ht-product-detail></ht-product-detail>
+    </div>
+    <div id="checkout" *ngIf="tabName == 'checkout'">
+      <ht-checkout></ht-checkout>
+    </div>
+  </div>
 </div>

@@ -1,7 +1,7 @@
 <h1 class="h1">This is my First component</h1>
 <h2>This is another tag from HTML file</h2>
 
-<h1>One way data binding</h1>
+<h1 style="font-size: 20px">One way data binding</h1>
 <div class="m-2">
   <h3>String Interpolation</h3>
   <p>My Num value is : {{ num1 }}</p>
@@ -32,7 +32,37 @@
     type="button"
     class="m-2 btn btn-primary"
     (click)="buttonClicked($event)"
+    [disabled]="myBoolean"
   >
     Click Me !!
   </button>
+
+  <div class="m-2">
+    <input id="num2" type="number" class="form-control" #myNumInput />
+    <button type="button" class="m-2 btn btn-primary" (click)="calculate()">
+      Calcualte
+    </button>
+  </div>
+</div>
+
+<div #myDiv>
+  <h2
+    [ngStyle]="{ 'font-size': num2 % 2 == 0 ? '20px' : '25px' }"
+    [ngClass]="{ 'my-background': num2 % 2 == 0 }"
+  >
+    Dummy content
+  </h2>
+</div>
+
+<div class="m-4" *ngIf="myBoolean">
+  <p>
+    simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+    been the industry's standard dummy text ever since the 1500s, when an
+    unknown printer took a galley of type and scrambled it to make a type
+    specimen book. It has survived not only five centuries, but also the leap
+    into electronic typesetting, remaining essentially unchanged. It was
+    popularised in the 1960s with the release of Letraset sheets containing
+    Lorem Ipsum passages, and more recently with desktop publishing software
+    like Aldus PageMaker including versions of Lorem Ipsum.
+  </p>
 </div>

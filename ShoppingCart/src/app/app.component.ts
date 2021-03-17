@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ShoppingCart';
+
+  tabName: string = 'login';
+
+  changeTabName(tName: string) {
+    this.tabName = tName;
+  }
 }

@@ -480,17 +480,80 @@ HTML, CSS, JS => browser => browser engine
 				2. Either pass the variable to controller in any function
 				
 				3. Or Bind the template reference with @ViewChild('templateRefName') 
-					ex: @ViewChild('myInput') txtInput: ElementRef;
+					ex: @ViewChild('myInput') txtInput: ElementRef;				
+					
+		
 						
 						
+					HTML Properties
+					
+						common properties
+						
+							id, name, class, style
+					
+						INPUT => input , button
+								value, disbaled => [disbaled]="true | false"
+								
+						Other =>						
+							textContent, innerHTML, 
+						
+									
 					
 					
+		Directives :
+
+			Will be applied on your component html elements
+			
+			Attribute Directives
+			
+			 <input id="num2" type="number" class="form-control" #myNumInput />
+			
+				<h2 class="mycss" style="font-size: 20px;"> Test </h2>
+				
+				style, class based on some condition
+				
+				ngStyle, ngClass
+				{
+					'key' : value,
+					'key1' : value
+				}
+				
+				<h2 [ngStyle]="{ 'font-size' : num2 % 2 == 0 ? '20px' : '25px' }" > Test </h2>
+				
+				<h2 [ngClass]="{ 'mycss' : num2 % 2 == 0" > Test </h2>
+			
+			
+			Structural Directives
+			
+				*
+			
+				Will change ur html element presence
+				
+				disturb ur html DOM tree
+				
+				Hide and Show
+				
+				<div>
+					
+				</div>
+				
+				Examples of SD :
+				
+					ngIf, ngFor
+					
+					*ngIf="Truthy | falsy value" => Hide and Show
+					
+					*ngFor = > loop your html elements
 					
 					
-					
-					
-					
-					
+		
+		step 1 ) input    => typing 
+		step 3 ) userName => update userName and print the userName {{}}
+		
+		Step 2 ) button1 => click => 
+		step 4 ) button2 => [disabled]="if userName is empty"
+		
+		Step 5)			enable => click => you shoul make userName as empty => clearing the userName
 					
 					
 					

@@ -17,13 +17,19 @@ export class MyFirstComponent {
 
   inputText: string = "Default Text";
 
-  myBoolean: boolean = false;
+  myBoolean: boolean = true;
 
   myStringArray: string[] = ['str1', '10'];
 
   myProd : Product = new Product("1", "Test", "Good");
 
   @ViewChild('myInput') txtInput1: ElementRef;
+
+  @ViewChild('myNumInput') numInput1: ElementRef;
+
+  num2: number = 0;
+
+  @ViewChild('myDiv') myDivElem: ElementRef;
 
   textInInput: string = "";
 
@@ -36,6 +42,13 @@ export class MyFirstComponent {
     console.log(this.txtInput1.nativeElement.value);
     this.txtInput1.nativeElement.value = "Changed Value";
     this.txtInput1.nativeElement.value = "";
+    this.txtInput1.nativeElement.disabled = true;
+
+    this.myDivElem.nativeElement.innerHTML = "<h2>Content Replaced</h2>";
+  }
+
+  calculate() {
+    this.num2 = this.numInput1.nativeElement.value;
   }
 
 }
