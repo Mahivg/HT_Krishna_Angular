@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-my-third',
@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-third.component.css']
 })
 export class MyThirdComponent implements OnInit {
+
+
+  myStr: string = "dummy";
+
+  @Input('strData')
+  strThirdArray: string[];
 
   constructor() { }
 

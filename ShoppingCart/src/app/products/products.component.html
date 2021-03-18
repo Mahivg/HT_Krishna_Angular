@@ -1,16 +1,19 @@
 <div class="m-2">
   <h2>Product List</h2>
-  <div>
-    <div>
+  <div class="product-list-container mb-4">
+    <div
+      *ngFor="let prod of products"
+      class="product-card mb-2 d-flex justify-content-around align-items-center"
+    >
       <img
         class="img-fluid product-list-img"
         alt="product image"
-        [src]="product.imageUrl"
+        [src]="prod.imageUrl"
       />
       <div>
-        <h3>{{ product.name }}</h3>
-        <h4>Rs.{{ product.price }}</h4>
-        <p>{{ product.description }}</p>
+        <h3>{{ prod.name }}</h3>
+        <h4>Rs.{{ prod.price }}</h4>
+        <p>{{ prod.description }}</p>
       </div>
     </div>
   </div>

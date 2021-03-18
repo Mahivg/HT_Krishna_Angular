@@ -32,7 +32,7 @@
     type="button"
     class="m-2 btn btn-primary"
     (click)="buttonClicked($event)"
-    [disabled]="myBoolean"
+    [disabled]="num2 % 2 == 0"
   >
     Click Me !!
   </button>
@@ -65,4 +65,28 @@
     Lorem Ipsum passages, and more recently with desktop publishing software
     like Aldus PageMaker including versions of Lorem Ipsum.
   </p>
+</div>
+
+<div>
+  <h3>NG FOR example</h3>
+
+  <div id="parentNgFor">
+    <div
+      [id]="'child-' + ind"
+      *ngFor="
+        let str of myStringArray;
+        index as ind;
+        first as firstElem;
+        last as lastElem;
+        odd as oddElem;
+        even as evenElem
+      "
+    >
+      <p>{{ ind }} - {{ str }}</p>
+      <p [ngClass]="{ className: oddElem }">First - {{ firstElem }}</p>
+      <p>Last - {{ lastElem }}</p>
+      <p>Odd - {{ oddElem }}</p>
+      <p>Even - {{ evenElem }}</p>
+    </div>
+  </div>
 </div>

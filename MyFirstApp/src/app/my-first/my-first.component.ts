@@ -19,7 +19,7 @@ export class MyFirstComponent {
 
   myBoolean: boolean = true;
 
-  myStringArray: string[] = ['str1', '10'];
+  myStringArray: string[] = ['str1', 'str2', 'str3'];
 
   myProd : Product = new Product("1", "Test", "Good");
 
@@ -36,6 +36,7 @@ export class MyFirstComponent {
   buttonClicked(event) {
     console.log(" I am getting clicked..........");
     console.log(event);
+    this.myBoolean = !this.myBoolean;
     // console.log(txtTempRef.value);
 
     this.textInInput = this.txtInput1.nativeElement.value;

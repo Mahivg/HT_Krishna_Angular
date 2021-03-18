@@ -1,6 +1,10 @@
 <h1>This is my second component</h1>
 <h2>This is another tag from HTML file</h2>
 
-<app-my-third></app-my-third>
-<app-my-third></app-my-third>
-<app-my-third></app-my-third>
+<div>
+  <h4>this is from My Second Component</h4>
+
+  <p *ngFor="let str of strArray">{{ str }}</p>
+</div>
+
+<app-my-third [strData]="strArray"></app-my-third>

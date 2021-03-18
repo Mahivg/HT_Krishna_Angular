@@ -553,19 +553,119 @@ HTML, CSS, JS => browser => browser engine
 		Step 2 ) button1 => click => 
 		step 4 ) button2 => [disabled]="if userName is empty"
 		
-		Step 5)			enable => click => you shoul make userName as empty => clearing the userName
-					
-					
-					
-					
-					
-					
+		Step 5)	enable => click => you shoul make userName as empty => clearing the userName
+		 			
 					
 					
 				
+
+		ngFor
 					
+			If you have array of elements, we could able to iterate it in HTML
+			
+			in javascript :
+			
+				for(let i = 0; i < 5 ; i++ ) {
+					console.log(i); // i => value
+				}
 				
+				let myArray = [1,2,3,4,5];
+				
+				for(let i = 0; i < myArray.length ; i++ ) {
+					//i is the index of your array
+					console.log(myArray[i]); // myArray[i] is the value
+				}
+				
+			In Angular, HTML
+			
+				let myArray = [1,2,3,4,5];
+			
+				*ngFor="let i of myArray" 
+				
+				<div *ngFor="let i of ['str1', 'str2']" >				
+					{{ i }}				
+				</div>		
+
+				i => is the value
+				
+				*ngFor="let i of myArray; index as ind; first as firstElem; last as lastElem; odd as oddElem; even as evenElem" 
+				
+				index => 'child-' + ind => child-0
+					
+				Result:
+				
+				<div>
+					1
+				</div>
+				
+				<div>
+					2
+				</div>
+					
+				<div>
+					3
+				</div>
+				
+				<div>
+					4
+				</div>
+				
+				<div>
+					5
+				</div>
+					
+					
+					
+					
+				Component Interaction:
+				
+				
+					AppComponent
+					
+						NavbarComponent
+							4 buttons
+						
+					4 buttons
+						
+						
+					Login
+					
+					Product
+					
+						product-detail
+					
+					
+					2 Process:	
+					Angular provides
+					
+						@Input, @Output					
+						1. Passing Data from Parent to child-
+							
+							1. Create a value in parent with some variable 
+								ex: myStrArray
+								
+							2. Create a varaible in child and annotate it with @Input
+								ex: @Input() myThirdArray
+							
+							3. In child declaration, in html selector add the property binding
+								<app-my-third [myThirdArray]="myStrArray" > </app-my-third>
+							
+						2. Intreaction from child to parent
+					
+					
 		
+		
+			Assignment of Directives:
+
+			1. Add a button which says 'Display details'
+			
+			2. Add a paragraph(<p>) with any content you want 
+			
+			3. Toggle the displayed content with click of button
+			
+			4. Log all the button clicks in array and output the array below the paragraph ( May be log button click with timestamp or show counter )
+			
+			5. Starting with the 5th log item, give all future log items a blue background ( via ngStyle ) and white color ( via ngClass )
 		
 		
 		

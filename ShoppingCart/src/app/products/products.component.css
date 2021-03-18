@@ -1,4 +1,13 @@
 .product-list-img {
   height: 300px;
   width: 300px;
+  border: 1px solid #aea5a5;
+  margin-right: 10px;
+}
+
+.product-list-container .product-card {
+  box-sizing: border-box;
+  box-shadow: 2px 1px 6px 1px #aeaeae;
+  width: 750px;
+  height: 350px;
 }
