@@ -7,4 +7,14 @@
   <p *ngFor="let str of strArray">{{ str }}</p>
 </div>
 
-<app-my-third [strData]="strArray"></app-my-third>
+<div>
+  <button class="btn btn-danger" (click)="showThird = !showThird">
+    Toggle Third
+  </button>
+</div>
+<div *ngIf="showThird">
+  <app-my-third
+    [strData]="strArray"
+    (push)="receiveMessages($event)"
+  ></app-my-third>
+</div>

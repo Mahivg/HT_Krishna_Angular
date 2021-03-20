@@ -5,3 +5,12 @@
 
   <p *ngFor="let str of strThirdArray">{{ str }}</p>
 </div>
+
+<div>
+  <h6>Communicating to Parent....</h6>
+
+  <input type="text" class="form-control" #childInput />
+
+  <!-- Trigger point -->
+  <button class="btn btn-success" (click)="passMessage()">Pass Message</button>
+</div>

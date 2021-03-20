@@ -8,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class MySecondComponent implements OnInit {
 
   strArray: string[] = ['1','2', '3', '4', '5', '6'];
+  showThird: boolean = true;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  receiveMessages(msg: string) {
+      console.log("In MySecondComponent : receiveMessages method...");
+      console.log(msg);
+      this.strArray.push(msg);
   }
 
 }

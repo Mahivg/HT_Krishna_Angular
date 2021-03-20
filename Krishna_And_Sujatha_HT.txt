@@ -670,5 +670,97 @@ HTML, CSS, JS => browser => browser engine
 		
 		
 		
+		Event Binding
+		
+		controller.ts
+			
+			buttonClicked(event) {
+				MouseClicked
+					click, hover
+			}
+		
+			(click)="controllerMethod()"
+			
+			
+			(click)="buttonClicked()"
+			
+			ng-click , ng-mouseover
+			
+			<button (click)="buttonClicked($event)"> Click </button>
+		
+		
+			
+		
+			<app-my-third (pushMessage)="receiveMessages($event)"> </app-my-third>
+		
+		
+		
+		
+		
+		Child to Parent
+		
+		MySecondComponent - @Input
+			
+			MyThirdComponent
+		
+				
+				
+				
+							MySecondComponent 
+			
+			MyThirdComponent(string)		MyFourthChild (number)
+		
+		
+			1. Through event binding
+			2. Customly created event
+			
+			Steps :
+			
+				1. Create a trigger point in Child or make sure which is ur trigger point
+				
+				2. Create a event emitter from angular core object in child and annotate it with @Output
+				
+				3. whenever its get triggered emit the value
+				
+				4. In parent, create a receiver method
+				
+				5. Bind the child and parent with event binding syntax
+				
+					(pushMessage)="receiveMessages($event)"
+				
+				
+		Component Lifecycle:
+		
+		
+			It can be achieved through interface
+
+
+			ngOnChanges => whenever your @Input values gets changes
+			
+			ngOnInit
+			
+			ngDoCheck
+			
+			ngAfterContentInit
+			
+			ngAfterContentChecked
+
+			ngAfterViewInit
+			
+			ngAfterViewChecked
+			
+			ngOnDestroy
+				
+				
+				
+				
+				
+				
+				
+				
+		
+		
+		
+		
 		
 		

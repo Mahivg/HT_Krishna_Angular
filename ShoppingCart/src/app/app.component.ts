@@ -13,4 +13,5 @@ export class AppComponent {
   changeTabName(tName: string) {
     this.tabName = tName;
   }
+
 }

@@ -1,6 +1,6 @@
-<ht-nav-bar [ptitle]="title"></ht-nav-bar>
+<ht-nav-bar [ptitle]="title" (onTabChange)="changeTabName($event)"></ht-nav-bar>
 <div class="container">
-  <div class="m-2">
+  <!-- <div class="m-2">
     <button
       type="button"
       class="btn btn-primary"
@@ -29,7 +29,7 @@
     >
       Checkout
     </button>
-  </div>
+  </div> -->
 
   <div class="m-2">
     <div id="login" *ngIf="tabName == 'login'">
