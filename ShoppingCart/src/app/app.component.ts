@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from './model/Product';
 
 @Component({
   selector: 'ht-root',
@@ -9,6 +10,8 @@ export class AppComponent {
   title = 'ShoppingCart';
 
   tabName: string = 'login';
+
+  products: Product[] = [];
 
   changeTabName(tName: string) {
     this.tabName = tName;

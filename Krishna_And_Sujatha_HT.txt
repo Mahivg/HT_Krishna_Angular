@@ -753,14 +753,232 @@ HTML, CSS, JS => browser => browser engine
 				
 				
 				
+	HTTP Client
+	
+	
+	
+	AppComponent => kept data as hardcoded
+	
+		products
+		
+		product details
+	
+	
+	Appcomponent not going to have hard coded data
+	
+	So the data need be feched from a common object
+	
+	
+	
+	Services And Dependecy Injection:
+	
+	
+		.ts => 
+		
+			MyService.ts => class MySevice  { id: number; name: string; }
+			
+			
+			MyService myS1 = new MyService();
+			
+			myS1.id = 1;
+			myS1.name = "name1";
+			
+			
+			MyService myS2 = new MyService();
+			
+			myS2.id = 2;			
+			myS2.name = "name2";
+			
+			let s1 = myS1.id;
+			
+			let s2 = myS2.id;
+	
+	
+	
+	MyService =. nEed to be common to components we need to request angular
+	
+		products: 2 products
+		
+		
+		instance = new MyService()	
+		
+
+	MySecondComponent				
+		myServiceSecond = instance
+		
+		PushProduct() {} => add a new product to myServiceSecond.products
+	
+	
+	MyThirdComponent				
+				
+		myServiceThird = instance
+		
+		
+	defaulr behaviour of classes
+	
+	But In Angular, Services
+	
+		Angular will do 
+		
+			new MyService() => one time
+		
+		and gives same value for components
+		
+			all components will recieve the same instance => Singleton object
+
+
+	How it will share same instance across components?
+	
+		Dependency Injection
+		
+			=> User not needed to worry about creating an object and sharing to needed place.
+			
+			=> Framework will do for that.
+		
 				
 				
+To make a class to service class:
 				
-				
-				
+	Create a class
+	
+	Mention it in providers array , can we done in another way => By Annotating the class with @Injectable()
+	
+	Request angular for instance
+		
+		constructor(mention the class){}
+		
+		
+	The state of an service object is same across components(wherever user mentioned in constructor)
+	
+	
+	Service Hierarchy
+	
+		1) AppModule => same throghout the application
+		
+				Declarations: [
+					AppComponent, MyFirstComponent, MySecondComponent, MyThirdComponent
+				],
+			
+				Prodivers: [ MyService ] or If you annatoted with @Injectable({ providedIn: root })
+			
+			
+		2) Adding in root component
+		
+			AppComponent => Same instance across the application
+			
+			providers: [ MyService ]
+	
+	
+		3) component level
+	
+			MySecondComponent
+			
+				providers: [ MyService ] => seperate instance
+		
+				I dont want same instance which is shared by other components like AppComponent, MyFirstComponent
+	
+	
+	
+	
+	
+	Appmodule.ts or annatoted
+	
+		providers: []
+	
+	
+	MySecondComponent => all of it child will receive the same new instance
+	
+		providers: [ Myservice]
+	
+	
+	
+I am not using it in appcomponent level, i need only at products level
+	appmodule or annoterd with Injectable
+	
+	Products component
+	
+		providers: [ProductService]
+	
+		product-detail
+		
+		product-edit
+		
+		
+	product.service.ts
+	
+	
+	
+	Example :
+	
+		Logging service
+		
+			array: string[]
+			
+		AppModule
+
+
+			AppComponnet
+			
+				Comopnent
+				I am adding string to logService.array
+		
+		
+	
+		appmodule -> add LoggingService
+		App Component ->
+		
+			Products-> Add LoggingService				Users -> add LoggingService
+			
+				product-edit								user-edit
+				product-add									user-add
+		
+		
+		
+	Service Objects	
+	
+		1) Data storage fpr hardcoded datas
+		
+		2) all the data action classes
+		
+		
+		
+
+	Routing:
+	
+		Based on URL change we need to show the page;
+	
+	Steps: 
+	
+		1. Create your routes
+		
+		2. Inform Angular about the routes
+			i) We need Angular's RoutingModule in our application
+			
+		3. To show only the component based on URL, provide placeholder
+	
+		4. Add triggering point
+		
+		
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		
 		
 		
 		
 		
+	
+	
+	
+	
 		

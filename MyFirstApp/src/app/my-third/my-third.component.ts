@@ -1,5 +1,7 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from '../model/Product';
+import { MyService } from '../services/MyService';
 
 @Component({
   selector: 'app-my-third',
@@ -21,7 +23,11 @@ export class MyThirdComponent implements OnChanges, OnInit, DoCheck, AfterConten
   pushMessage = new EventEmitter<string>();
   // pushMessage = new EventEmitter<number>();
 
-  constructor() { }
+  // myServiceThird: MyService;
+
+  myThirdProducts: Product[];
+
+  constructor(public myServiceThird: MyService) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('ngOnChanges Called...');
@@ -30,6 +36,12 @@ export class MyThirdComponent implements OnChanges, OnInit, DoCheck, AfterConten
 
   ngOnInit(): void {
     console.log('ngOnInit Called...');
+  //  this.myServiceThird = new MyService(); // breaking the singleton
+
+    this.myThirdProducts = this.myServiceThird.getProducts();
+
+  //   this.myServiceThird.products = [ new Product("3", "name3", "desc3"),
+  // new Product("4", "name4", "desc4") ];
   }
   ngDoCheck(): void {
     console.log('ngDoCheck Called...');
@@ -60,6 +72,10 @@ export class MyThirdComponent implements OnChanges, OnInit, DoCheck, AfterConten
 
     this.pushMessage.emit(msg + '  added additional text');
     // this.pushMessage.emit(2000);
+  }
+
+  getPrdoucts() {
+    this.myServiceThird.products = this.myServiceThird.getProducts();
   }
 
 }
