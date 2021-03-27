@@ -944,31 +944,94 @@ I am not using it in appcomponent level, i need only at products level
 		
 
 	Routing:
-	
-		Based on URL change we need to show the page;
+	  
+		Based on URL change we need to show the components we need;
 	
 	Steps: 
 	
+	
 		1. Create your routes
 		
+			const appRoutes: Routes = [
+									  {
+										path: 'myfirst',
+										component: MyFirstComponent
+									  },
+									  {
+										path: 'mysecond',
+										component: MySecondComponent
+									  },
+									  {
+										path: 'mythird',
+										component: MyThirdComponent
+									  },
+									  {
+										path: '',
+										redirectTo: 'myfirst',
+										pathMatch: 'full'
+									  }, 
+									  {
+									  
+										path: "**",
+										component: PageNotFound
+									  }
+									];
+									
+			default routing;
+			
+				default component need to be displayed
+				
+			wild routing: 
+				**
+				
+		
 		2. Inform Angular about the routes
-			i) We need Angular's RoutingModule in our application
+			i) We need Angular's RouterModule in our application
+			
+				 RouterModule.forRoot(appRoutes)
 			
 		3. To show only the component based on URL, provide placeholder
+		
+			<router-outlet></router-outlet>
 	
-		4. Add triggering point
+		4. Add triggering point => to change the url =>
+		
+			<a href="login"> Login </a>
+			<a routerLink="login"> Login </a>
 		
 		
+		Programmatic Navigation:
 		
+			1. We requested router service from angular
+			2. we called navigateByUrl method
+			
+			
+		Parametarized routing
 		
+			in our routes we need to give a placeholeder for our router
+			
+				'mythird/:name'
+				
+				MyThirdComponent
+				
+					name  = 
+	
+	
+	
+	products => list of products
+	
+		products/:id => ProductDetail
+		
+							id -> fetch the product and show the details
 	
 	
 	
 	
-	
-	
-	
-	
+	Access data from URL:
+		1. Inject ActivatedRoute => mention in constructor
+		2. access routerParams
+		3. fetch the value of your key ex: id, prodId
+		4. use that value for ur projection
 	
 	
 	

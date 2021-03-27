@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#"> {{ projectTitle }}</a>
 
-  <ul class="navbar-nav">
+  <!-- <ul class="navbar-nav">
     <li class="nav-item active" (click)="changeTab('login')">
       <a class="nav-link" href="#"
         >Login <span class="sr-only">(current)</span></a
@@ -15,6 +15,23 @@
     </li>
     <li class="nav-item" (click)="changeTab('checkout')">
       <a class="nav-link" href="#">Cart</a>
+    </li>
+  </ul> -->
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="Login"
+        >Login <span class="sr-only">(current)</span></a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="products">Products</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="product-detail">Detail</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="checkout">Cart</a>
     </li>
   </ul>
 </nav>

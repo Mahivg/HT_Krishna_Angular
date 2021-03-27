@@ -1,5 +1,5 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../model/Product';
 import { MyService } from '../services/MyService';
 
@@ -27,7 +27,7 @@ export class MyThirdComponent implements OnChanges, OnInit, DoCheck, AfterConten
 
   myThirdProducts: Product[];
 
-  constructor(public myServiceThird: MyService) { }
+  constructor(public myServiceThird: MyService, private route: ActivatedRoute) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('ngOnChanges Called...');
@@ -39,6 +39,10 @@ export class MyThirdComponent implements OnChanges, OnInit, DoCheck, AfterConten
   //  this.myServiceThird = new MyService(); // breaking the singleton
 
     this.myThirdProducts = this.myServiceThird.getProducts();
+  console.log(this.route);
+
+    let routeParam = this.route.snapshot.params;
+    console.log(routeParam['id']);
 
   //   this.myServiceThird.products = [ new Product("3", "name3", "desc3"),
   // new Product("4", "name4", "desc4") ];

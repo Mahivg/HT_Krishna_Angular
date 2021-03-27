@@ -7,7 +7,36 @@ import { LoginComponent } from './login/login.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { RouterModule, Routes } from '@angular/router';
 
+const scRoutes : Routes = [
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'products',
+    component: ProductsComponent
+  },
+  {
+    path: 'products/:prodId',
+    component: ProductDetailComponent,
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent
+  },
+  {
+    path: '',
+    redirectTo: 'products',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +47,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     CheckoutComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(scRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

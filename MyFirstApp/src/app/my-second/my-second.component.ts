@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from '../model/Product';
 import { MyService } from '../services/MyService';
 
@@ -17,7 +18,7 @@ export class MySecondComponent implements OnInit {
 
   // myServiceSecond: MyService;
 
-  constructor(public myServiceSecond : MyService) { }
+  constructor(public myServiceSecond : MyService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -37,4 +38,11 @@ export class MySecondComponent implements OnInit {
     this.myServiceSecond.products.push(new Product("3", "name3", "desc3"));
   }
 
+
+  navigateTo(str: string) {
+
+      //operation
+      this.router.navigateByUrl('mythird');
+      // this.router.navigateByUrl(str);
+  }
 }

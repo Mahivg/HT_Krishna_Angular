@@ -20,6 +20,12 @@
     Toggle Third
   </button>
 </div>
+<div>
+  <button class="btn btn-warning" (click)="navigateTo('mythird')">
+    Navigate to My Third
+  </button>
+</div>
+
 <div *ngIf="showThird">
   <app-my-third
     [strData]="strArray"

@@ -1,9 +1,18 @@
 <div class="container">
   <h1 class="colour-green">App Component work.......</h1>
-  <app-my-first></app-my-first>
+
+  <div class="m-4 d-flex justify-content-between">
+    <a class="btn btn-success" routerLink="myfirst"> First </a>
+    <a class="btn btn-info" routerLink="mysecond"> Second </a>
+    <a class="btn btn-primary" routerLink="mythird"> Third </a>
+  </div>
+
+  <!-- here i need to show only one component at a time -->
+  <router-outlet> </router-outlet>
+  <!-- <app-my-first></app-my-first> -->
   <!-- <div class="app-my-first"></div> -->
 
-  <app-my-second></app-my-second>
+  <!-- <app-my-second></app-my-second> -->
 </div>
 
 <!-- <app-product></app-product> -->

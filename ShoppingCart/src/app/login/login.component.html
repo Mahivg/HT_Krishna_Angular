@@ -3,13 +3,13 @@
 
   <div class="form-group">
     <label class="control-label"> Username</label>
-    <input type="text" class="form-control" />
+    <input type="text" class="form-control" #txtUserName />
   </div>
   <div class="form-group">
     <label class="control-label"> Password</label>
-    <input type="password" class="form-control" />
+    <input type="password" class="form-control" #txtPassword />
   </div>
   <div class="form-group text-center">
-    <button class="btn btn-primary">Login</button>
+    <button class="btn btn-primary" (click)="login()">Login</button>
   </div>
 </div>

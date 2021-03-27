@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AppService } from '../services/app.service';
 
 @Component({
   selector: 'ht-nav-bar',
@@ -13,9 +14,12 @@ export class NavBarComponent implements OnInit {
   @Output()
   onTabChange = new EventEmitter<string>();
 
-  constructor() { }
+  userLoggedIn: boolean;
+
+  constructor(private appService: AppService) { }
 
   ngOnInit(): void {
+    this.userLoggedIn = this.appService.getUserLoginStatus();
   }
 
   changeTab(tabName: string){

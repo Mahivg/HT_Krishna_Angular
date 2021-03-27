@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from '../model/Product';
 import { AppService } from '../services/app.service';
 
@@ -14,10 +15,14 @@ export class ProductsComponent implements OnInit {
   // @Input()
   products: Product[];
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: AppService, private router: Router) { }
 
   ngOnInit(): void {
     this.products = this.appService.getProducts();
+  }
+
+  showDetail(id: string) {
+    this.router.navigateByUrl('products/' + id);
   }
 
 }

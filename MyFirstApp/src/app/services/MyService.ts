@@ -8,7 +8,7 @@ import { Product } from "../model/Product";
 export class MyService {
 
 
-    constructor(private router: Router){}
+    constructor(){}
 
     public products: Product[] = [
       new Product("1", "name1", "desc1"),
