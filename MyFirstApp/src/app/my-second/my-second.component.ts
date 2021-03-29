@@ -35,6 +35,7 @@ export class MySecondComponent implements OnInit {
   }
 
   pushProduct() {
+    this.myServiceSecond.textSubject.next('Data from second component...');
     this.myServiceSecond.products.push(new Product("3", "name3", "desc3"));
   }
 

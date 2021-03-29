@@ -1033,11 +1033,85 @@ I am not using it in appcomponent level, i need only at products level
 		3. fetch the value of your key ex: id, prodId
 		4. use that value for ur projection
 	
+	URL params
+	
+	http://localhost:4300/products/p001 => p001 is url params
 	
 	
+	http://localhost:4300/products/p001?name=test&id=p001 => name and id is query param
+	
+	
+	Observable
+	
+	
+		Messaging system
+		
+		Publish(data) => Subscribed Place (data)
 		
 		
+		One Component or any triggering => publish the data
 		
+			loginStatus => publish(data)
+			
+			
+		Some other place or component
+		
+		product
+			loginStatus.subscribed(data)
+		
+		checkout		
+			loginStatus.subscribed()
+			
+			loginStatus.subscribed()
+			
+			
+			Observable will be created in two ways => rxjs
+			
+			
+				1. Subject Type => Cross component communication
+				
+						BehaviourSubject : Type
+						ReplaySubject : Type
+						
+				2. Creating manally
+				
+					const myObservable = new Observable(obs => {} )
+					
+					
+					const subscription = myObservable.subscribed();
+					
+					ngOnDestrpy 
+					
+						subscription.unsubscribe()
+				
+				3. Use observable available in rxjs library
+					
+				
+							interval()
+			
+	
+		
+	Why Observable?
+	
+		1. Angular in built developed with so many observable methods
+		
+			like params
+			
+		2. it is used to access data from one comp to another componet
+		
+				And this is dynamic
+				
+				
+		3. Where?
+			subscribe block
+			Routing
+			
+			Forms
+			
+			HTTP
+				GET, POST, PUT, DELETE
+		
+			Component Communication
 		
 		
 	

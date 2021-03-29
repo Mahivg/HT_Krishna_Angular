@@ -1,5 +1,6 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { interval, Observable } from 'rxjs';
 import { Product } from '../model/Product';
 import { MyService } from '../services/MyService';
 
@@ -27,6 +28,12 @@ export class MyThirdComponent implements OnChanges, OnInit, DoCheck, AfterConten
 
   myThirdProducts: Product[];
 
+  myObservable: any;
+
+  mySubscription: any;
+
+  passSubscription: any;
+
   constructor(public myServiceThird: MyService, private route: ActivatedRoute) { }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -35,6 +42,9 @@ export class MyThirdComponent implements OnChanges, OnInit, DoCheck, AfterConten
   }
 
   ngOnInit(): void {
+
+
+   this.passSubscription =  this.myServiceThird.textSubjectObserver.subscribe(data => { console.log(data)});
     console.log('ngOnInit Called...');
   //  this.myServiceThird = new MyService(); // breaking the singleton
 
@@ -46,6 +56,30 @@ export class MyThirdComponent implements OnChanges, OnInit, DoCheck, AfterConten
 
   //   this.myServiceThird.products = [ new Product("3", "name3", "desc3"),
   // new Product("4", "name4", "desc4") ];
+
+    // setInterval(function() {  console.log(new Date().getDate());}, 500);
+
+    // setTimeout(function(){ console.log('method called');}, 500);
+
+    // interval(500).subscribe(data => {
+    //   console.log(data);
+    // });
+
+
+    this.myObservable = new Observable((observer) => {
+
+        // setInterval(function() {
+        //   // next is the triggering method
+        //   observer.next(new Date().getTime());
+        // }, 1500);
+    });
+
+
+
+   this.mySubscription =  this.myObservable.subscribe(data => {
+        console.log(data);
+    });
+
   }
   ngDoCheck(): void {
     console.log('ngDoCheck Called...');
@@ -63,7 +97,10 @@ export class MyThirdComponent implements OnChanges, OnInit, DoCheck, AfterConten
     console.log('ngAfterViewChecked Called...');
   }
   ngOnDestroy(): void {
+
     console.log('ngOnDestroy Called...');
+    this.mySubscription.unsubscribe();
+    this.passSubscription.unsubscribe();
   }
 
 

@@ -16,12 +16,19 @@ const scRoutes : Routes = [
   },
   {
     path: 'products',
-    component: ProductsComponent
+    component: ProductsComponent,
+    // children : [
+    //   {
+    //     path: ':prodId', // products/:prodId
+    //     component: ProductDetailComponent,
+    //   }
+    // ]
   },
   {
     path: 'products/:prodId',
     component: ProductDetailComponent,
   },
+
   {
     path: 'checkout',
     component: CheckoutComponent

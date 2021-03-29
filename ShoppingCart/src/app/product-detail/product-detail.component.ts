@@ -15,12 +15,30 @@ export class ProductDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private appService: AppService) { }
 
   ngOnInit(): void {
-    let routeParams = this.route.snapshot.params;
 
-    const productId = routeParams['prodId'];
 
-    this.selectedProduct = this.appService.getProductById(productId);
+    // subscribing to latest value
+    this.route.params.subscribe(rParams => {
+      const productId = rParams['prodId'];
+      this.selectedProduct = this.appService.getProductById(productId);
+    });
 
+
+    this.route.queryParams.subscribe(qParams => {
+      const name = qParams['name'];
+      console.log(name);
+
+    });
+
+    // snapshot is an unchanged value
+    // let routeParams = this.route.snapshot.params;
+    // const queryParams = this.route.snapshot.queryParams;
+
+    // const productId = routeParams['prodId'];
+
+    // const name = queryParams['name'];
+
+    // this.selectedProduct = this.appService.getProductById(productId);
 
   }
 

@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
+import { BehaviorSubject } from "rxjs";
 import { Product } from "../model/Product";
 
 @Injectable( {
@@ -7,6 +8,10 @@ import { Product } from "../model/Product";
 })
 export class MyService {
 
+    // pushing the data
+    textSubject = new BehaviorSubject<string>('');
+    // receiving the data
+    textSubjectObserver = this.textSubject.asObservable();
 
     constructor(){}
 

@@ -22,7 +22,9 @@ export class ProductsComponent implements OnInit {
   }
 
   showDetail(id: string) {
-    this.router.navigateByUrl('products/' + id);
+    // this.router.navigateByUrl('products/' + id);
+    // products/p001
+    this.router.navigate(['products', id], { queryParams: { name: 'test', id: 'test'}}) ;
   }
 
 }
