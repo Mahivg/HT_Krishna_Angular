@@ -8,6 +8,7 @@ import { MySecondComponent } from './my-second/my-second.component';
 import { MyThirdComponent } from './my-third/my-third.component';
 import { MyService } from './services/MyService';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGaurd } from './services/guard/Auth.gaurd';
 
 
 const appRoutes: Routes = [
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'mythird',
-    component: MyThirdComponent
+    component: MyThirdComponent,
+    canActivate: [ AuthGaurd ]
   },
   {
     path: 'myparam/:id',

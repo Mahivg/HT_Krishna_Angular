@@ -8,6 +8,7 @@ import { ProductsComponent } from './products/products.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGaurd } from './services/gaurds/auth.gaurd';
 
 const scRoutes : Routes = [
   {
@@ -17,6 +18,7 @@ const scRoutes : Routes = [
   {
     path: 'products',
     component: ProductsComponent,
+    canActivate: [AuthGaurd]
     // children : [
     //   {
     //     path: ':prodId', // products/:prodId
@@ -27,6 +29,7 @@ const scRoutes : Routes = [
   {
     path: 'products/:prodId',
     component: ProductDetailComponent,
+    canActivate: [AuthGaurd]
   },
 
   {
@@ -35,7 +38,7 @@ const scRoutes : Routes = [
   },
   {
     path: '',
-    redirectTo: 'products',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {

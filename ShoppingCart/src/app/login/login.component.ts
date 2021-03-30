@@ -45,13 +45,20 @@ export class LoginComponent implements OnInit {
     if(user) {
       if(user.password === password) {
         console.log("User logged In....");
+        // publisher block
+        this.appService.userLoggedIn.next(true);
+        this.appService.setUserLoginStatus(true);
         this.router.navigateByUrl('products');
 
       } else {
         console.log("Invalid Password....");
+        // publisher block
+        this.appService.userLoggedIn.next(false);
       }
     } else {
       console.log("Invalid Credentials...");
+      // publisher block
+      this.appService.userLoggedIn.next(false);
     }
 
   }

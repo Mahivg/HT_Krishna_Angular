@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
 import { Product } from "../model/Product";
 import { User } from "../model/User";
 
@@ -9,6 +10,12 @@ import { User } from "../model/User";
 export class AppService {
 
   private isUserLoggedIn: boolean;
+
+
+  //publisher
+  userLoggedIn = new BehaviorSubject<boolean>(false);
+  // reciever
+  userLoggedIn$ = this.userLoggedIn.asObservable();
 
   private products: Product[] = [
     new Product("p001", "School Bag", "Superior Durable Fabric 3 Compartments 17 Laptop Compatible Adjustable Shoulder and Waist Straps Extra Comfort Construction Secure Hidden Compartment Additional Spacious Utility Pocket", 799, "https://images-na.ssl-images-amazon.com/images/I/91ArJudYdDL._SL1500_.jpg", true),

@@ -1116,6 +1116,135 @@ I am not using it in appcomponent level, i need only at products level
 		
 	
 	
+	Appcomponet.html
+	
+	
+		<ht-login [inputData]="Data" >
+		
+		
+		<ht-navbar (eventParent)="parentCompent()" >
+		
+	
+	Routing
+	
+	Appcomponent.html
+	
+
+	
+			<router-outlet>
+			
+			/login		
+			
+				<ht-login>				
+				
+			/products
+			
+				<ht-products>
+				
+	BehaviourSubject => is special observable = > used for our own commnication scenario
+	
+	
+		1. In a common place create publisher and subscriber
+		
+			> service classes are common to components , it will share same instance
+			
+			
+				Appservice
+				
+					userLoggedIn
+					
+					userLoggedIn$
+		
+		2. component or place which want to publish the data, use publisher
+		
+				login component
+				
+					login() => credential 
+					
+						isValid? push the true : push the false
+						
+							.next(true) or .next(false);
+		
+		3. wherever you want to subscribe for the data use subscriber
+	
+	
+				navbar 
+				
+					userLoggedIn$.subscribe(data => {})
+	
+	
+	
+	
+	
+	
+	
+	Angualr itself have lots of observables availabe in their inbuilt classes
+	
+	
+		Routing
+		
+			For routing change
+			
+				.next() ?? by angular
+				
+				this.route.params.subscribe(data => {})
+		
+		Forms
+		
+		HTTP
+	
+	
+	
+	Routing
+	
+		Protecting your route
+		
+			
+		Routing Gaurd
+		
+			canActivate
+				
+					check the condition when they try to enter the route
+					
+					/products
+						
+						check whether user is logged in or not
+			
+			canDeactive
+		
+				check the condition whenever thry leave the route
+				
+				/products => /login
+		
+				Check user 
+	
+	
+	
+	Stpes:
+	
+		1. Create a service class  implement an interface called canActivate
+		
+			AuthGaurd.ts
+		
+		2. canActivate () => write the logic => return boolean variable
+		
+			return false;
+		
+		3. configure this service as a gaurd
+		
+			routes I confugured canActivate: []
+			
+		4. in the canActivate() => variable returns true we can access the route, if it return false we can't acces the route
+		
+		
+		
+	Forms and HTTP
+	
+		
+	
+	
+	
+	
 	
 	
 		

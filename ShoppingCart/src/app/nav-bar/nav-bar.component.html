@@ -19,19 +19,22 @@
   </ul> -->
 
   <ul class="navbar-nav">
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="!userLoggedIn">
       <a class="nav-link" routerLink="Login"
         >Login <span class="sr-only">(current)</span></a
       >
     </li>
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="userLoggedIn">
       <a class="nav-link" routerLink="products">Products</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="userLoggedIn">
       <a class="nav-link" routerLink="product-detail">Detail</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="userLoggedIn">
       <a class="nav-link" routerLink="checkout">Cart</a>
+    </li>
+    <li *ngIf="userLoggedIn">
+      <a class="btn btn-link" (click)="logout()">Logout</a>
     </li>
   </ul>
 </nav>
