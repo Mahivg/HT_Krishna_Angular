@@ -9,44 +9,52 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { CheckoutComponent } from './checkout/checkout.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGaurd } from './services/gaurds/auth.gaurd';
+import { AppRoutingModule } from './app.routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-const scRoutes : Routes = [
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'products',
-    component: ProductsComponent,
-    canActivate: [AuthGaurd]
-    // children : [
-    //   {
-    //     path: ':prodId', // products/:prodId
-    //     component: ProductDetailComponent,
-    //   }
-    // ]
-  },
-  {
-    path: 'products/:prodId',
-    component: ProductDetailComponent,
-    canActivate: [AuthGaurd]
-  },
+// const scRoutes : Routes = [
+//   {
+//     path: 'login',
+//     component: LoginComponent
+//   },
+//   {
+//     path: 'products',
+//     component: ProductsComponent,
+//     canActivate: [AuthGaurd],
+//     canActivateChild: [AuthGaurd],
+//     children : [
+//       {
+//         path: ':prodId', // products/:prodId
+//         component: ProductDetailComponent,
+//       },
 
-  {
-    path: 'checkout',
-    component: CheckoutComponent
-  },
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path: '**',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  }
-];
+//       {
+//         path: ':prodId/edit',
+//         component: ProductDetailComponent
+//       }
+//     ]
+//   },
+//   // {
+//   //   path: 'products/:prodId',
+//   //   component: ProductDetailComponent,
+//   //   canActivate: [AuthGaurd]
+//   // },
+
+//   {
+//     path: 'checkout',
+//     component: CheckoutComponent
+//   },
+//   {
+//     path: '',
+//     redirectTo: 'login',
+//     pathMatch: 'full'
+//   },
+//   {
+//     path: '**',
+//     redirectTo: 'login',
+//     pathMatch: 'full'
+//   }
+// ];
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +66,10 @@ const scRoutes : Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(scRoutes)
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+    // RouterModule.forRoot(scRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

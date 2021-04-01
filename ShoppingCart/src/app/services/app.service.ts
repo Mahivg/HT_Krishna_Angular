@@ -25,8 +25,8 @@ export class AppService {
   ];
 
   private users: User[] = [
-    new User('test1', 'test1212'),
-    new User('test2', 'test1313')
+    new User('test1@ht.com', 'test1212'),
+    new User('test2@ht.com', 'test1313')
   ];
 
   public getProducts(): Product[] {

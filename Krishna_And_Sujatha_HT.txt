@@ -1238,9 +1238,228 @@ I am not using it in appcomponent level, i need only at products level
 		
 		
 		
-	Forms and HTTP
+	Nested Routing
 	
+		AppComponent.html
+			
+			placeholder => <router-outlet>
+			
+			Products
+			
+			placeholder <router-outlet>
+			
+				got to routes 
+				
+				define children in specific route
+				
+				children can be rendered
+				
+				
+				
 		
+	Forms 
+	
+		Interaction
+		
+			Show the form elements => Easy one => html tags=> input  text, password, email, number
+			
+			Make user enter the values 
+			
+				Fetch the values from inputs
+				
+					Pure js
+					
+						document.getElementbyId('txtIput').value
+						
+					In Angular
+					
+						@ViewChild()
+						
+						Number inputs increases => number of varaibles will be increased
+						
+						adding a new student
+						
+							id, name, email, age, dob, shorDesc, hobbies
+							
+							varaibles
+							id, name, email, age, dob, shorDesc, hobbies
+							
+							Fetch the value
+							
+							const studId = id.nativeElement.value,
+							const studName = name.nativeElement.value, 
+							email.nativeElement.value, age, dob, shorDesc, hobbies
+							
+							new Student (studId,...)
+			
+				Validate the data
+			
+			process the data
+			
+			
+	Forms => group of inputs
+	
+	
+		<form>
+		
+			<input type="email" />
+			
+				
+			
+			<input>
+		
+		</form>
+	
+		1. Template Driven Forms (TD Forms) => 3 or 4 inputs
+		
+				Form will be created in HTML of the component then passed to controller for processing
+				
+				Fetching the values of a form in a single click
+				
+				we can control the validation of the data
+				
+				
+				Appmodule
+				
+					Import => FormsModule => components, directive, service
+		
+		2. Reactive Forms => large or nested or complex
+		
+				Forms will be created directly in our Component controller
+				
+				Appmodule
+				
+					import
+				
+					FormsModule
+					
+					ReactiveFormsModule
+				
+			
+			
+	
+	Basics things you have to know to work on a forms
+	
+	
+		1. HTML form elements
+		
+				<input>
+				
+					text
+					number
+					password
+					email
+					
+					
+					checkbox
+					radiobutton
+					
+					textarea
+					
+		2. Input validation
+		
+		
+				type validation
+				
+					type="number"
+						
+						enter a text => by default it wil show some error
+					
+					
+				
+				Pattern
+				
+					Regular Expression or RegEX
+					
+					any input is not that patter then also it is an invalid datas
+		
+					
+					
+		3. In angular wise
+
+
+				Two way data binding
+				
+					variable in controller always sync with the html
+					
+					
+					str: string = "test";
+					
+					printStr() {
+						console.log(this.str);
+						
+						test // One way data binding
+						
+						text11212 // two way data binding
+					}
+					
+					
+					<input type="text"  value="{{str}}" />
+					
+					------------------------
+						test11212
+					------------------------
+					
+					<input type="text"  [value]="str" />
+					
+					<input type="text"  name="userName" ngModel /> // FormsModule
+					
+					
+					<button (click)="printStr()"> Click </button>
+					
+					
+	
+
+	Template Driven Form
+	
+	
+		1. Create a form in HTML => Form
+		
+			<form #myForm="ngForm">
+				myForm will not have ElementRef
+				
+				instead it will have reference to NgForm = { all the inputs of the form }
+			</form>
+			
+		2. Create form controls || form elements
+		
+				Form				
+					userName, password
+					
+				1. add name attribute in all inputs for sure
+				2. add ngModel directive to all inputs
+				3. add a template referece and assign ngModel
+						#username="ngModel"
+							username.errors, username.status, username.valid, 
+				
+			Input validation
+			
+				email
+				minlength
+				maxlength				
+				min	=> 18			
+				max	=> 56 =>	
+				required => should not be empty
+				pattern=""
+				
+				errors {
+					email
+					minlength
+					maxlength				
+					min	=> 18			
+					max	=> 56 =>	
+					required => should not be empty
+					pattern
+				}
+				
+				hide and show the error msg based on error object
+		
+		3. Fetch and process the value
+		
+					
+					
+					
+					
 	
 	
 	
