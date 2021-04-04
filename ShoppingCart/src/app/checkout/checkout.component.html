@@ -1,1 +1,44 @@
-<p>checkout works!</p>
+<h4>Checkout</h4>
+
+<div>
+  <form id="studForm" [formGroup]="studFG" (ngSubmit)="submitSTD()">
+    <div class="form-group">
+      <label class="control-label"> Name </label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="name"
+        (keypress)="calledWhileTyping()"
+      />
+    </div>
+    <div class="form-group">
+      <label class="control-label"> Age </label>
+      <input
+        type="number"
+        min="10"
+        class="form-control"
+        formControlName="age"
+      />
+    </div>
+    <div [formGroup]="studFG.get('address')">
+      <div class="form-group">
+        <label class="control-label"> Address Line 1 </label>
+        <input type="text" class="form-control" formControlName="line1" />
+      </div>
+
+      <div class="form-group">
+        <label class="control-label"> Address Line 2 </label>
+        <input type="text" class="form-control" formControlName="line2" />
+      </div>
+
+      <div class="form-group">
+        <label class="control-label"> Address Line 3 </label>
+        <input type="text" class="form-control" formControlName="line3" />
+      </div>
+    </div>
+
+    <div class="m-2">
+      <button class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>

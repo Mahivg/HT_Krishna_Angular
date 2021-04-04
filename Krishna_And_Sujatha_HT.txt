@@ -1457,7 +1457,204 @@ I am not using it in appcomponent level, i need only at products level
 		3. Fetch and process the value
 		
 					
+	When we have to use?
+		
+		if it is a simple form
+		
+	advantages
+	
+		easy to create in html, if more logic computed in html
+		
+	disadvagtes
+	
+	
+		id:
+		
+		name:
+		
+		gender:
+		
+		address:
+		
+			line1 :
+			
+			line2: 
+			
+	
+	Reactive Forms:
+	
+		ReactiveFormsModule => import
+		
+		
+		1. here form will be created in component then we need to bind it in HTML	
+
+				Create form group instance in component
 					
+						this.loginFG = new FormGroup({
+						  userName : new FormControl('', [Validators.required, Validators.minLength(3)]),
+						  password: new FormControl()
+						});
+		
+		2. Typescript
+				class object
+				
+				
+		3. creating form instance
+		
+			creating and registering form control will be changed
+			
+			
+		4. bind it to our html
+		
+				i) [formGroup]="loginFG"
+				
+				ii) formControlName="userName"
+		
+				iii) ngSubmit => loginRFS()
+				
+				
+						loginFG.value => extract the value
+						
+				iv) loginFG.get('userName').errors	
+		
+		
+		
+		name: "asdsad"
+		age: 19
+		line1: "sdkjn"
+		line2: "ksdn"
+		line3: "ksnd"
+		
+		name: "asdsad"
+		age: 19,
+		address: {
+			line1: "sdkjn"
+			line2: "ksdn"
+			line3: "ksnd"	
+		}
+		
+		
+		
+	HttpModule
+	
+		HTTP calls
+	
+		get a data from a URL
+		
+		
+		REST API Application => java, .net
+		
+			expose datas  => intract with db and send us data
+
+		www.somehost.com/v1/api/users
+		
+			{
+				users: []
+			}
+
+
+		
+	
+	Data flow in Front end and Backend
+	
+	
+	
+		1. Client appliation will receive username and password
+		
+		2. using any cryptography, they will encrypt
+		
+			test1@h1.com
+			ashidnsadhiunx##7847ksjdchdskjcndsjnleiuse
+
+
+		3. Backend will receive encrypted username and password
+		
+		4. Backend application will decrypt the details
+		
+			test1@ht.com,
+			test1212
+		
+		
+		5. Backend application check with data in database
+		
+		6. If it is valid crendetials
+		
+		
+				it will generate a token for a client application => (userdetails in encrypted, it has timeout)
+				
+				send back to client application
+		
+		7. Client need something =>
+		
+		
+				it will call backend application with the token,
+				
+				backend applicaiton will receive the request, with token
+				
+				if it is token, 
+				
+					respond to the request
+				Authentication Error
+		
+			
+	
+	Through internet, it uses HTTP protocal as a medium
+	
+	Raise a network request using HTTP protocal
+	
+	
+	Http request will have a response => {}
+	
+	
+	In Angular
+	
+		In appmodule => HttpClientModule => service, component
+		
+		Request HttpClient service in the component you need
+	
+	
+	
+	HTTP Methods or HTTP VERBS
+	
+		employees
+		
+		localhost:5000/v1/api/employees = { employees : [] }
+	
+	
+		GET   => Fetching some details from server
+		
+			It will not pass anything to server
+			
+			but it will receive the response
+			
+			
+		localhost:5000/v1/api/employees , empObj
+			
+		POST => is used to add a new object in server
+	
+				Have a body section to carry your payload(data)
+				
+				response
+				
+		PUT => add or modify funcitionlity
+				
+				Have a body section to carry your payload(data)
+				
+				response
+			
+		DELETE => no need to pass object
+		
+		
+			send the response
+			
+			
+		
+	
+	
+	
+	
+	
+	
 					
 					
 	

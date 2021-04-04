@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../model/User';
 import { AppService } from '../services/app.service';
@@ -24,11 +24,19 @@ export class LoginComponent implements OnInit {
 
   users: User[];
 
+  //declaration
+  loginFG: FormGroup;
+
 
   constructor(private appService: AppService, private router: Router) { }
 
   ngOnInit(): void {
     this.users = this.appService.getUsers();
+
+    this.loginFG = new FormGroup({
+      userName : new FormControl('', [ Validators.required, Validators.email, Validators.minLength(3) ]),
+      password: new FormControl('', [ Validators.required])
+    });
   }
 
   login(loginForm: NgForm) {
@@ -81,6 +89,45 @@ export class LoginComponent implements OnInit {
 
     if(user) {
       if(user.password === userCred.pwd) {
+        console.log("User logged In....");
+        // publisher block
+        this.appService.userLoggedIn.next(true);
+        this.appService.setUserLoginStatus(true);
+        this.router.navigateByUrl('products');
+
+      } else {
+        console.log("Invalid Password....");
+        // publisher block
+        this.appService.userLoggedIn.next(false);
+      }
+    } else {
+      console.log("Invalid Credentials...");
+      // publisher block
+      this.appService.userLoggedIn.next(false);
+    }
+    // const userNameControl = loginForm.controls.usrname.value;
+
+  }
+
+
+  loginFGS() {
+
+
+    console.log(this.loginFG);
+    console.log(this.loginFG.value);
+    if(this.loginFG.invalid) {
+      return;
+    }
+    // const loginForm = { value : { usrname: {}, pwd: {}}};
+    // console.log(loginForm);
+    // console.log(loginForm.value);
+    // console.log(loginForm.controls.usrname.value);
+    // console.log(loginForm.controls.pwd.value);
+    let userCred = this.loginFG.value;
+    const user = this.users.find( u => u.name === userCred.userName );
+
+    if(user) {
+      if(user.password === userCred.password) {
         console.log("User logged In....");
         // publisher block
         this.appService.userLoggedIn.next(true);

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { interval, Observable } from 'rxjs';
@@ -34,7 +35,9 @@ export class MyThirdComponent implements OnChanges, OnInit, DoCheck, AfterConten
 
   passSubscription: any;
 
-  constructor(public myServiceThird: MyService, private route: ActivatedRoute) { }
+  constructor(public myServiceThird: MyService,
+     private route: ActivatedRoute,
+     private http: HttpClient) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('ngOnChanges Called...');

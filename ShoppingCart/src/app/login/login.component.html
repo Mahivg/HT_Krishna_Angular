@@ -1,4 +1,4 @@
-<div class="col-md-8 m-4">
+<!-- <div class="col-md-8 m-4">
   <h2 class="text-center">Login</h2>
   <form id="loginForm" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
     <div class="form-group">
@@ -20,7 +20,7 @@
       >
         <p *ngIf="userName.errors.required">Username is required!!</p>
         <p *ngIf="userName.errors.email">
-          The data should be in proper email structre
+          The data should be in proper email structure
         </p>
         <p *ngIf="userName.errors.minlength">
           Minimum it should be 3 character length
@@ -36,6 +36,54 @@
         ngModel
         required
         #txtPassword
+      />
+    </div>
+    <div class="form-group text-center">
+      <button type="submit" class="btn btn-primary">Login</button>
+      <!-- <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button> -->
+<!-- <button type="button" (click)=""></button>
+    </div>
+  </form>
+</div> -->
+
+<div class="col-md-8 m-4">
+  <h2 class="text-center">Login</h2>
+  <form
+    id="loginForm"
+    [formGroup]="loginFG"
+    #loginForm="ngForm"
+    (ngSubmit)="loginFGS()"
+  >
+    <div class="form-group">
+      <label class="control-label"> Username</label>
+      <input
+        type="email"
+        name="usrname"
+        class="form-control"
+        formControlName="userName"
+      />
+      <div
+        class="text-danger"
+        *ngIf="loginForm.submitted && loginFG.get('userName').errors"
+      >
+        <p *ngIf="loginFG.get('userName').errors.required">
+          UserName is Required..!!!
+        </p>
+        <p *ngIf="loginFG.get('userName').errors.minlength">
+          It should have minimum 3 characters...
+        </p>
+        <p *ngIf="loginFG.get('userName').errors.email">
+          Data should be in proper email structure...
+        </p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label"> Password</label>
+      <input
+        type="password"
+        name="pwd"
+        class="form-control"
+        formControlName="password"
       />
     </div>
     <div class="form-group text-center">
