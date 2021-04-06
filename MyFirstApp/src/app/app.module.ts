@@ -11,6 +11,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AuthGaurd } from './services/guard/Auth.gaurd';
 
 import { HttpClientModule } from '@angular/common/http';
+import { PostsComponent } from './posts/posts.component';
 
 
 const appRoutes: Routes = [
@@ -25,6 +26,11 @@ const appRoutes: Routes = [
   {
     path: 'mythird',
     component: MyThirdComponent,
+    canActivate: [ AuthGaurd ]
+  },
+  {
+    path: 'posts',
+    component: PostsComponent,
     canActivate: [ AuthGaurd ]
   },
   {
@@ -46,7 +52,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent, MyFirstComponent, MySecondComponent, MyThirdComponent, PageNotFoundComponent
+    AppComponent, MyFirstComponent, MySecondComponent, MyThirdComponent, PageNotFoundComponent, PostsComponent
   ],
   imports: [
     BrowserModule,

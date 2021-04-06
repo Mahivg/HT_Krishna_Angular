@@ -1,0 +1,9 @@
+.post-container {
+  padding: 25px;
+}
+
+.post-container .posts {
+  margin: 20px 0;
+  box-shadow: 3px 3px 2px 2px #949191;
+  padding: 10px;
+}

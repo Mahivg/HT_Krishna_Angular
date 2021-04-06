@@ -1649,7 +1649,25 @@ I am not using it in appcomponent level, i need only at products level
 			
 			
 		
+	how to call an API from Angular application:
 	
+
+	a. Find out the contract details..
+	
+		what is the url?
+			http://jsonplaceholder.typicode.com/posts
+		
+		What type of method we need to invoke?			
+			GET, POST
+		do we need to pass any additional information from clientside?
+			No
+		what will be the response structure?
+		
+			Response is an array of objects
+			
+			each object consist of following key
+			
+				{ userId : number, id: number, title : string, body: string } => model class
 	
 	
 	

@@ -1,0 +1,12 @@
+<div class="m-2">
+  <div class="post-container" *ngIf="posts.length > 0">
+    <div class="posts" *ngFor="let post of posts; index as ind">
+      <p>{{ ind + 1 }}</p>
+      <p>User Id : {{ post.userId }}</p>
+      <p>ID : {{ post.id }}</p>
+
+      <p>Title : {{ post.title }}</p>
+      <p>Body : {{ post.body }}</p>
+    </div>
+  </div>
+</div>
