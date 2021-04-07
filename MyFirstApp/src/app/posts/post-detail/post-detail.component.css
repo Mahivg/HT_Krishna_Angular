@@ -1,0 +1,19 @@
+.post-container {
+  padding: 20px;
+  margin: 20px;
+}
+
+.post-card {
+  border: 2px double rgb(41, 36, 36);
+  padding: 20px;
+}
+
+.ids {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.ids > p {
+  font-size: 16px;
+}

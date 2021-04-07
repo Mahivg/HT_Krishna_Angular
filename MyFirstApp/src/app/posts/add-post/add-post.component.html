@@ -1,0 +1,23 @@
+<div class="add-post-area">
+  <form [formGroup]="addPostFG" (ngSubmit)="addPostSubmit()">
+    <div class="form-group">
+      <label for="userId" class="control-label"> UserID</label>
+      <input class="form-control" type="text" formControlName="userId" />
+    </div>
+    <div class="form-group">
+      <label for="userId" class="control-label"> Post ID</label>
+      <input class="form-control" type="text" formControlName="postId" />
+    </div>
+    <div class="form-group">
+      <label for="userId" class="control-label"> Title</label>
+      <input class="form-control" type="text" formControlName="title" />
+    </div>
+    <div class="form-group">
+      <label for="userId" class="control-label"> Body</label>
+      <input class="form-control" type="text" formControlName="body" />
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary">Add Post</button>
+    </div>
+  </form>
+</div>

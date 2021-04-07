@@ -10,8 +10,12 @@ import { MyService } from './services/MyService';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGaurd } from './services/guard/Auth.gaurd';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PostsComponent } from './posts/posts.component';
+import { PostDetailComponent } from './posts/post-detail/post-detail.component';
+import { AddPostComponent } from './posts/add-post/add-post.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthInterceptor } from './services/auth.interceptor';
 
 
 const appRoutes: Routes = [
@@ -34,6 +38,16 @@ const appRoutes: Routes = [
     canActivate: [ AuthGaurd ]
   },
   {
+    path: 'posts/add-new',
+    component: AddPostComponent,
+    canActivate: [ AuthGaurd ]
+  },
+  {
+    path: 'posts/:id',
+    component: PostDetailComponent,
+    canActivate: [ AuthGaurd ]
+  },
+  {
     path: 'myparam/:id',
     component: MyThirdComponent
   },
@@ -52,15 +66,19 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent, MyFirstComponent, MySecondComponent, MyThirdComponent, PageNotFoundComponent, PostsComponent
+    AppComponent, MyFirstComponent, MySecondComponent, MyThirdComponent, PageNotFoundComponent, PostsComponent, PostDetailComponent, AddPostComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],
   // providers: [ MyService ],
-  providers: [  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

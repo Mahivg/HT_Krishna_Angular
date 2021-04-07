@@ -1,9 +1,34 @@
 .post-container {
   padding: 25px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 20px;
 }
 
 .post-container .posts {
   margin: 20px 0;
   box-shadow: 3px 3px 2px 2px #949191;
   padding: 10px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+.post-container .posts:hover {
+  box-shadow: 1px 5px 2px 2px #565656;
+  transition: box-shadown 0.5ms ease;
+}
+
+.post-id {
+  font-size: 18px;
+  font-weight: bold;
+}
+.post-details > p:first-child {
+  font-size: 16px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.post-details > p:last-child {
+  font-size: 14px;
+  text-align: justify;
 }

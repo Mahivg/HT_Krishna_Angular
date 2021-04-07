@@ -1,0 +1,19 @@
+<div style="padding: 20px">
+  <button class="btn btn-warning" routerLink="/posts"><< Back to Posts</button>
+</div>
+<div class="post-container">
+  <div class="post-card" *ngIf="post.id">
+    <div class="ids">
+      <p>Post ID : {{ post.id }}</p>
+      <p>USER ID : {{ post.userId }}</p>
+    </div>
+    <div>
+      <p style="font-weight: 900">Title</p>
+      <p>{{ post.title }}</p>
+    </div>
+    <div>
+      <p style="font-weight: 900">Body</p>
+      <p>{{ post.body }}</p>
+    </div>
+  </div>
+</div>
