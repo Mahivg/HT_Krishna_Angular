@@ -1,0 +1,21 @@
+<div class="m-3">
+  <h4 class="pb-3">Products</h4>
+  <!-- <div class="form-group">
+    <label for="search"> Search </label>
+    <input type="text" class="form-control col-md-6" />
+  </div> -->
+</div>
+<div class="m-4 product-container">
+  <div
+    class="product-card"
+    *ngFor="let prod of products"
+    (click)="showProduct(prod.id)"
+  >
+    <img [src]="prod.imageUrl" alt="" class="prod-img img-fluid" />
+
+    <div class="prod-detail">
+      <p>{{ prod.name }}</p>
+      <p>{{ prod.price }}</p>
+    </div>
+  </div>
+</div>

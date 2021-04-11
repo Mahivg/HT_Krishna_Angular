@@ -1,0 +1,10 @@
+.cart-container {
+  width: 500px;
+}
+
+.cart-line {
+  border-bottom: 1px solid #232323;
+}
+.cart-line:nth-child(1) {
+  border-top: 1px solid #232323;
+}

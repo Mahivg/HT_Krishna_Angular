@@ -1,0 +1,24 @@
+<div class="product-detail-container">
+  <div class="product-detail">
+    <div>
+      <h4>Product Detail</h4>
+    </div>
+    <img [src]="product.imageUrl" alt="" class="img-fluid product-detail-img" />
+
+    <div class="m-2">
+      <p>{{ product.name | uppercase }}</p>
+      <p>{{ product.description }}</p>
+      <p>{{ product.price | currency: "INR" }}</p>
+    </div>
+
+    <div class="m-2">
+      <button class="btn btn-warning" (click)="addToCart(product.id)">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+
+  <div class="cart-detail">
+    <htf-cart></htf-cart>
+  </div>
+</div>

@@ -1670,13 +1670,72 @@ I am not using it in appcomponent level, i need only at products level
 				{ userId : number, id: number, title : string, body: string } => model class
 	
 	
+	 user credentials
+	 
+	 
+		return token string
+		
+	Next call
+	
+		_authToken : {tokenString};
+	
+	I am making a call to add a posts
+	
+		URL, postObj, headers { authToken }
+		
+	Backend appliaction
 	
 	
-	
+		First they will get details from headers
+		
+			authToken => if it is valid only
+			
+			Payload => that will taken to action
 					
 					
 	
 	
+	
+	http Call (getPost)   -->		Interceptor (create a class which can be called for all HTTP request -->		BackEnd
+	
+	
+	
+	
+	req -> next.handle(req)
+	
+	
+	req -> modifying our req (adding headers) => custReq => next.handle(custReq);
+	
+	
+	
+	
+	Products
+	
+		prodict-edit
+		product-add
+		
+		product.module.ts
+		
+		declare
+		
+		
+	Shared
+	
+		common-component
+		
+		shared.module.ts
+		
+		
+	appmodule
+	
+		sharedmodule,
+		
+		productsmodule
+		
+	
+		
+		
+		
 	
 	
 	

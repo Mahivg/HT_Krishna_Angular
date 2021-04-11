@@ -1,0 +1,13 @@
+.product-detail-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 25px;
+  padding: 15px;
+}
+
+.product-detail-img {
+  height: 500px;
+  width: 500px;
+  object-fit: contain;
+}

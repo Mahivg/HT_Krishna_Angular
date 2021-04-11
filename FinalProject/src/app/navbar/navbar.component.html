@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"> {{ projectTitle }}</a>
+  <ul class="navbar-nav ml-auto" *ngIf="!userLoggedIn">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="Login" routerLink="/login"
+        >Login <span class="sr-only">(current)</span></a
+      >
+    </li>
+  </ul>
+
+  <ul class="navbar-nav ml-auto" *ngIf="userLoggedIn">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="products" routerLink="/products"
+        >Products</a
+      >
+    </li>
+    <li>
+      <a class="nav-link" (click)="logout()">Logout</a>
+    </li>
+  </ul>
+</nav>
