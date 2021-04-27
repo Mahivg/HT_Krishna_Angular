@@ -1,0 +1,59 @@
+<div class="mt-2">
+  <h2>Products Component</h2>
+  <hr />
+
+  <div class="row">
+    <div class="m-2">
+      <button type="button" class="btn btn-primary" (click)="logData()">
+        Click Me !!
+      </button>
+    </div>
+    <div class="col-sm-12">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a href="#pAdd" class="nav-link active" role="tab" data-toggle="tab">
+            Add
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#pEdit" class="nav-link" role="tab" data-toggle="tab">
+            Edit
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#pLog" class="nav-link" role="tab" data-toggle="tab">
+            Logs
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-2">
+    <div class="tab-content m-4">
+      <div class="row tab-pane active" role="tab-panel" id="pAdd">
+        <app-product-add></app-product-add>
+      </div>
+      <div class="row tab-pane" role="tab-panel" id="pEdit">
+        <app-product-edit></app-product-edit>
+      </div>
+
+      <div class="row tab-pane" role="tab-panel" id="pLog">
+        <button type="button" class="btn btn-primary m-2" (click)="printLog()">
+          Print Log from Products Component
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger m-2"
+          (click)="productLogs = []"
+        >
+          Clear logs
+        </button>
+        <div class="w-100"></div>
+        <div class="col-sm-12">
+          <app-print-logs [logs]="productLogs"></app-print-logs>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

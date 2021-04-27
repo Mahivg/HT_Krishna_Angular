@@ -1,0 +1,90 @@
+<div class="m-2 row">
+  <h2>App Component</h2>
+
+  <hr />
+
+  <div class="w-100 m-3">
+    <button type="button" class="btn btn-primary m-2" (click)="logData()">
+      Click Me !!
+    </button>
+
+    <button type="button" class="btn btn-danger m-2" (click)="clearInService()">
+      Clear Log In service
+    </button>
+  </div>
+
+  <div class="col-sm-12">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a
+          href="#components"
+          class="nav-link active"
+          role="tab"
+          data-toggle="tab"
+        >
+          Components
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#logs" class="nav-link" role="tab" data-toggle="tab"> Logs</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-sm-12 tab-content m-4">
+    <div class="row tab-pane active" role="tab-panel" id="components">
+      <div class="col-sm-12">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a
+              href="#pComponents"
+              class="nav-link active"
+              role="tab"
+              data-toggle="tab"
+            >
+              Product Components
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#uComponents"
+              class="nav-link"
+              role="tab"
+              data-toggle="tab"
+            >
+              User Components
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-sm-12 tab-content m-4">
+        <div
+          class="tab-pane col-sm-12  active"
+          role="tab-panel"
+          id="pComponents"
+        >
+          <app-products></app-products>
+        </div>
+        <div class="tab-pane col-sm-12 " role="tab-panel" id="uComponents">
+          <app-users></app-users>
+        </div>
+      </div>
+    </div>
+
+    <div id="logs" class="row tab-pane" role="tab-panel">
+      <div class="row">
+        <button type="button" class="btn btn-primary m-2" (click)="printLog()">
+          Print Log from App Component
+        </button>
+        <button type="button" class="btn btn-danger m-2" (click)="logs = []">
+          Clear logs
+        </button>
+
+        <div class="col-sm-12">
+          <app-print-logs [logs]="logs"></app-print-logs>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
